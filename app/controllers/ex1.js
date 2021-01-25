@@ -9,6 +9,6 @@ export default class Ex1Controller extends Controller {
 
   @action
   clear() {
-    this.content = '';
+    this.info = '';
   }
 }

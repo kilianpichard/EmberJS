@@ -3,8 +3,6 @@
   @type = "text"
   @value = {{this.info}}/>
 
-<p>0</p>
 <p>{{this.info.length}}</p>
-
-{{@model.value.length}}
+<button type="button" {{on "click" this.clear}}>Clear</button>
 {{outlet}}
