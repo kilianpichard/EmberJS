@@ -1,10 +1,10 @@
 let services = [];
 
-function get countActive(){
+function countActive(){
   return services.filter(service => service.active).length;
 }
 
-function get sumActive(){
+function sumActive(){
   let sum = 0;
   services.forEach(service =>{
     if(service.active){
