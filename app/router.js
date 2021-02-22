@@ -11,7 +11,14 @@ Router.map(function () {
   this.route('testlist');
   this.route('contacts', function() {
     this.route('add');
-    this.route('update');
+    this.route('update',{ path:'update/:contact_id'});
   });
-  this.route('contacts.add');
+  this.route('categories', function() {
+    this.route('add');
+    this.route('update',{ path: '/update/:category_id' });
+    this.route('contacts', { path: '/contacts/:category_id' }, function() {
+      this.route('add');
+      this.route('update',{ path: '/contacts/update/:contact_id' });
+    });
+  });
 });
