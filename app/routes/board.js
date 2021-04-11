@@ -5,7 +5,10 @@ import { inject as service } from '@ember/service';
 
 export default class BoardRoute extends AbstractrouteRoute {
   @service userAuth;
-
+  @service moment;
+  beforeModel() {
+    this.moment.updateLocale('fr');
+  }
   model() {
     let user = this.userAuth.user;
     if (user) {

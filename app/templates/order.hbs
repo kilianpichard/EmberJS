@@ -1,2 +1,52 @@
 {{page-title "Order"}}
+
+<div class="twelve wide stretched column">
+
+  <div class="ui segment">
+    <LinkTo class="ui left floated teal button" @route="board">Board</LinkTo>
+    <div  class="ui one column grid">
+      <div class="column">
+        <div class="ui attached segment">
+          Commandes
+
+        </div>
+
+        <div class="ui attached segment">
+          <table class="ui table">
+            <thead>
+            <tr>
+              <th>Section</th>
+              <th>Date de Création</th>
+              <th>Nom</th>
+              <th>Prix</th>
+              <th>Quantité</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each @model.orderdetails as |order|}}
+              <tr>
+                <td>{{ order.product.section.name }}</td>
+                <td>{{@model.dateCreation}}</td>
+                <td>{{ order.product.name }}</td>
+                <td>{{ order.product.price }}</td>
+                <td>{{ order.quantity }}</td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<tr>
+<td>{{@model.dateCreation}}</td>
+<td>{{@model.count}}</td>
+<td>{{@model.amount}}</td>
+</tr>-->
+
+
 {{outlet}}

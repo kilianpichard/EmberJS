@@ -9,5 +9,6 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.route('absctractroute');
   this.route('board');
-  this.route('order');
+  this.route('order', { path: 'order/:order_id' });
+  this.route('section');
 });
